@@ -1,6 +1,6 @@
-package com.jju;
-
+// Interface for all payment methods
 public interface PaymentMethod {
-    // The contract: any class implementing this MUST have a processPayment method
+
+    // Process a payment
     void processPayment(double amount);
 }
