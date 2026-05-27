@@ -1,17 +1,21 @@
-package com.jju;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class App 
-{
-    public static void main(String[] args) {
-        // Requirement: Use a polymorphic List of the Interface type
-        List<PaymentMethod> cart = new ArrayList<>();
+// Main driver class
+public class Main {
 
-        // TODO: Add one CreditCard and one PayPal object to the list
-        
-        System.out.println("--- Checkout Initiated ---");
-        // TODO: Loop through the list and process a payment of 99.99 for each
+    public static void main(String[] args) {
+
+        // Create list of payment methods
+        List<PaymentMethod> payments = new ArrayList<>();
+
+        // Add payment methods
+        payments.add(new CreditCard("1234-5678-9999"));
+        payments.add(new PayPal("user@gmail.com"));
+
+        // Process all payments
+        for (PaymentMethod payment : payments) {
+            payment.processPayment(99.99);
+        }
     }
 }
